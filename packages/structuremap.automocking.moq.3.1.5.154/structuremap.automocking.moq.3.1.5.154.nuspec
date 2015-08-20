@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>structuremap.automocking.moq</id>
+    <version>3.1.5.154</version>
+    <authors>Jeremy D. Miller,  Joshua Flanagan</authors>
+    <owners>Jeremy D. Miller,  Joshua Flanagan</owners>
+    <licenseUrl>https://github.com/structuremap/structuremap/raw/master/LICENSE.TXT</licenseUrl>
+    <projectUrl>http://structuremap.github.io</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AutoMocker with StructureMap for Moq</description>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="StructureMap" version="3.0.0" />
+      <dependency id="Moq" version="4.0.10827" />
+    </dependencies>
+  </metadata>
+</package>
