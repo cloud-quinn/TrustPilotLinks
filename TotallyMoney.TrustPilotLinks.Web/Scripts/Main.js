@@ -19,9 +19,11 @@
 
         if (needToShow > 0) {
             $(".manual").show();
+            $(".fileRequirements").hide();
         }
         else {
             $(".manual").hide();
+            $(".fileRequirements").show();
         }
     });
 
