@@ -7,13 +7,16 @@
         // Does page load?
         test.assertHttpStatus(200, 'TrustPilot form loads');
         test.assertTextExists('Generate unique links', 'Heading appears - Generate unique links');
+        this.click('h3[id="ui-id-1"]')
     });
 
     casper.then(function () {
-        //can we see an error if we don't upload a valid file?
-        this.click('button#downloadFile');
+        //can we see an error if we don't upload a valid file?                
         this.wait(1000, function () {
-            this.capture('/Images/no-file-uploaded.png');
+        this.click('button#downloadFile'); 
+   		});
+        this.wait(1000, function () {
+            this.capture('Images/no-file-uploaded.png');
             test.assertVisible('p.error');
             test.assertTextExists('Please upload a valid .csv file of customer data', 'Correct error appears - "Please upload a valid .csv file of customer data"');
         });
@@ -21,9 +24,11 @@
 
     casper.then(function () {
         //can we show manual input fields?
-        this.click('a#manualInput');
+        this.click('h3[id="ui-id-3"]');
         test.assertVisible('input#Domain');
-        this.capture('/Images/manual-input-fields.png');
+        this.wait(1000, function () {
+        this.capture('Images/manual-input-fields.png');
+        });
     });
 
     casper.then(function () {
@@ -32,7 +37,9 @@
         test.assertVisible('small#aboutDomain');
         this.click('a.showAboutSecretKey');
         test.assertVisible('small#aboutSecretKey');
-        this.capture('/Images/hints.png');
+        this.wait(1000, function () {
+        this.capture('Images/hints.png');
+        });
     });
 
     casper.then(function () {
@@ -89,7 +96,7 @@
             this.test.assertEval(function () {
                 return document.getElementById('uniqueLink').value == "http://www.trustpilot.com/evaluate/totallymoney.com?a=1234&b=ZW1haWxAZW1haWwuY29t&c=John%20Doe&e=b232dc87ad2a699763720a29f5b3db2df6f80dfd";
             }, 'Correct current link generated on click');
-            this.capture('/Images/current-link.png');
+            this.capture('Images/current-link.png');
         });
     });
 
@@ -100,14 +107,16 @@
             this.test.assertEval(function () {
                 return document.getElementById('CustName').value == "";
             }, 'Customer name cleared on click of "Add another customer"');
-            this.capture('/Images/add-another-customer.png');
+            this.capture('Images/add-another-customer.png');
         });
     });
 
     casper.then(function () {
         //can we hide manual inputs?
-        this.click('a#manualInput');
-        test.assertNotVisible('input#Domain');
+        this.click('h3[id="ui-id-1"]')
+        this.wait(1000, function () {
+        test.assertNotVisible('input#Domain')
+        });
     });
 
     casper.run(function () {
