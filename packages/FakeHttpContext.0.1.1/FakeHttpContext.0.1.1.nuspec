@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FakeHttpContext</id>
+    <version>0.1.1</version>
+    <authors>Vadim Zozulya</authors>
+    <owners>Vadim Zozulya</owners>
+    <projectUrl>https://github.com/vadimzozulya/FakeHttpContext</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Fake HttpContext for unit tests</description>
+    <releaseNotes>Supported feature: 
+ -MapPath
+ -Request URL
+ -UserAgent
+ -Session 
+ -Browser capabilities</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>HttpContext Unit Tests</tags>
+  </metadata>
+</package>

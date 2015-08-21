@@ -8,7 +8,7 @@
         public string Domain;
         public string Key;
 
-        public Input(string custName, string custEmail, string orderRef, string domain, string key = " ")
+        public Input(string custName, string custEmail, string orderRef, string domain, string key = "")
         {
             CustName = custName;
             CustEmail = custEmail;

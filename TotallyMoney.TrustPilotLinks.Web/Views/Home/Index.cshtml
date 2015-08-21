@@ -4,79 +4,87 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+    <h1>Generate unique links</h1>
+    <div id="accordion">
+    <h3>
+        <label for="dataFile">Please upload a .csv file of your customer data</label>
+    </h3>
+    <div>
+        @using (Html.BeginForm("GetLink", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
 
-<h1>Generate unique links</h1>
 
-@using (Html.BeginForm("GetLink", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
+            <input type="file" name="dataFile" id="dataFile" />
+            <br />
+            <div class="fileRequirements">
+                Please make sure you upload a .csv file that includes:
+                <ul>
+                    <li>each customer's full name,</li>
+                    <li>the <strong>domain name</strong><a href="#" class="about showAboutDomain">[?]</a> of the site they used,</li>
+                    <li>the <strong>secret key</strong><a href="#" class="about showAboutSecretKey">[?]</a> for said domain,</li>
+                    <li>each customer's <strong>e-mail address</strong>, and </li>
+                    <li>their most recent order ID.</li>
+                </ul>
+            </div>
 
-        <h3><label for="dataFile">Please upload a .csv file of your customer data</label></h3>
-        <input type="file" name="dataFile" id="dataFile" />
-<br />
-    <div class="fileRequirements">Please make sure you upload a .csv file that includes:
-        <ul>
-            <li>each customer's full name,</li>
-            <li>the <strong>domain name</strong><a href="#" class="about showAboutDomain">[?]</a> of the site they used,</li>
-            <li>the <strong>secret key</strong><a href="#" class="about showAboutSecretKey">[?]</a> for said domain,</li>
-            <li>each customer's <strong>e-mail address</strong>,</li>
-            <li>and their most recent order ID.</li>
-        </ul>
+            <p class="error">@ViewBag.Error</p>
+            <button id="downloadFile" name="submitType" value="downloadFile" type="submit">Download data file</button>
+
+        }
     </div>
-   
-    <p class="error">@ViewBag.Error</p>
-    <button id="downloadFile" name="submitType" value="downloadFile" type="submit">Download data file</button>
+    <small id="aboutDomain">Your domain name on Trustpilot, e.g. "mysite.com".</small>
+    <small id="aboutSecretKey">Each domain has its own key which must be kept secret at all times. This key is provided by Trustpilot. To get started, ask your account manager for your secret key.</small>
 
-}
+    <h3>
+        Or <a href="#" id="manualInput">generate link(s) manually</a>
+    </h3>
+    <div>
+        <button class="manual" id="fillFields">Test form with dummy data</button>
 
-<small id="aboutDomain">Your domain name on Trustpilot, e.g. "mysite.com".</small>
-<small id="aboutSecretKey">Each domain has its own key which must be kept secret at all times. This key is provided by Trustpilot. To get started, ask your account manager for your secret key.</small>
+        @using (Html.BeginForm("GetLinkManual", "Home", FormMethod.Post, new { name = "manualSubmit", id = "manualSubmit" }))
+        {
 
-<h3>Or <a href="#" id="manualInput">generate link(s) manually</a></h3>
-<button class="manual" id="fillFields">Test form with dummy data</button>
+            <div class="manual">
+                <div class="container">
+                    <span class="label">@Html.LabelFor(model => model.Domain)<a href="#" class="about showAboutDomain">[?]</a></span>
+                    @Html.TextBoxFor(model => model.Domain, new { @type = "text", @class = "item", placeholder = "e.g. www.mysite.com" })
+                </div>
+                <p class="error">@Html.ValidationMessageFor(model => model.Domain)</p>
 
-@using (Html.BeginForm("GetLinkManual", "Home", FormMethod.Post, new { name = "manualSubmit", id = "manualSubmit" }))
-{
+                <div class="container">
+                    <span class="label">@Html.LabelFor(model => model.Key)<a href="#" class="about showAboutSecretKey">[?]</a></span>
+                    @Html.TextBoxFor(model => model.Key, new { @type = "text", @class = "item", placeholder = "e.g. mys3cr3tk3y (this value is provided by Trustpilot)" })
+                </div>
+                <p class="error">@Html.ValidationMessageFor(model => model.Key)</p>
 
-    <div class="manual">
-        <div class="container">
-            <span class="label">@Html.LabelFor(model => model.Domain)<a href="#" class="about showAboutDomain">[?]</a></span>
-            @Html.TextBoxFor(model => model.Domain, new { @type = "text", @class = "item" })
+                <div class="container">
+                    @Html.LabelFor(model => model.CustName, new { @class = "label" })
+                    @Html.TextBoxFor(model => model.CustName, new { @type = "text", @class = "item", placeholder = "e.g. John Doe" })
+                </div>
+                <p class="error">@Html.ValidationMessageFor(model => model.CustName)</p>
+
+
+                <div class="container">
+                    @Html.LabelFor(model => model.CustEmail, new { @class = "label" })
+                    @Html.TextBoxFor(model => model.CustEmail, new { @type = "text", @class = "item", placeholder = "e.g. test@example.com" })
+                </div>
+                <p class="error">@Html.ValidationMessageFor(model => model.CustEmail)</p>
+
+                <div class="container">
+                    @Html.LabelFor(model => model.OrderRef, new { @class = "label" })
+                    @Html.TextBoxFor(model => model.OrderRef, new { @type = "text", @class = "item", placeholder = "e.g. ORDER365 (or however you like to format your order references)" })
+                </div>
+                <p class="error">@Html.ValidationMessageFor(model => model.OrderRef)</p>
+
+                <button class="manualUtilities" id="getLink" type="submit" name="submitType" value="getCurrentLink">Get current link</button>
+                <button class="manualUtilities" id="addCustomer" name="submitType" value="addCustomer" type="submit">Add another customer</button>
+                <button class="manualUtilities" id="downloadFile" name="submitType" value="downloadFile" type="submit">Download data file</button>
+            </div>
+        }
+
+        <div class="container manual">
+            <label for="uniqueLink" class="item label">This customer's <strong>unique link</strong> is: </label>
+            <input class="item" id="uniqueLink" name="uniqueLink" type="text" value="@ViewBag.UniqueLink" /><button id="copy" title="Copy link"><i class="fa fa-clipboard"></i></button>
         </div>
-        <p class="error">@Html.ValidationMessageFor(model => model.Domain)</p>
-
-        <div class="container">
-            <span class="label">@Html.LabelFor(model => model.Key)<a href="#" class="about showAboutSecretKey">[?]</a></span>
-            @Html.TextBoxFor(model => model.Key, new { @type = "text", @class = "item" })
-        </div>
-        <p class="error">@Html.ValidationMessageFor(model => model.Key)</p>
-
-        <div class="container">
-            @Html.LabelFor(model => model.CustName, new { @class = "label" })
-            @Html.TextBoxFor(model => model.CustName, new { @type = "text", @class = "item" })
-        </div>
-        <p class="error">@Html.ValidationMessageFor(model => model.CustName)</p>
-
-
-        <div class="container">
-            @Html.LabelFor(model => model.CustEmail, new { @class = "label" })
-            @Html.TextBoxFor(model => model.CustEmail, new { @type = "text", @class = "item" })
-        </div>
-        <p class="error">@Html.ValidationMessageFor(model => model.CustEmail)</p>
-
-        <div class="container">
-            @Html.LabelFor(model => model.OrderRef, new { @class = "label" })
-            @Html.TextBoxFor(model => model.OrderRef, new { @type = "text", @class = "item" })
-        </div>
-        <p class="error">@Html.ValidationMessageFor(model => model.OrderRef)</p>
-
-        <button class="manualUtilities" id="getLink" type="submit" name="submitType" value="getCurrentLink">Get current link</button>
-        <button class="manualUtilities" id="addCustomer" name="submitType" value="addCustomer" type="submit">Add another customer</button>
-        <button class="manualUtilities" id="downloadFile" name="submitType" value="downloadFile" type="submit">Download data file</button>
     </div>
-}
-
-<div class="container manual">
-    <label for="uniqueLink" class="item label">This customer's <strong>unique link</strong> is: </label>
-    <input class="item" id="uniqueLink" name="uniqueLink" type="text" value="@ViewBag.UniqueLink" /><button id="copy" title="Copy link"><i class="fa fa-clipboard"></i></button>
 </div>
-

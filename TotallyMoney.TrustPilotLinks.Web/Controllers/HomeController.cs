@@ -48,6 +48,7 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
 
                 if (dataFile != null && dataFile.ContentLength > 0 && extension == ".csv")
                 {
+
                     var inputs = new List<Input>();
                     var results = new List<Result>(GetHeaders());
                     var uploadedBytes = new byte[dataFile.ContentLength];
@@ -112,9 +113,10 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
                 Session["ResultsList"] = resultsList;
                 _results = resultsList;
 
-                //if (submitType == "addCustomer")
-                //{
-                //}
+                if (submitType == "addCustomer")
+                {     
+                    ModelState.Clear();
+                }
 
                 if (submitType == "getCurrentLink")
                 {
@@ -124,14 +126,12 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
                 if (submitType == "downloadFile")
                 {
                     return CreateFile(_results);
-
                 }
             }
             catch (Exception exception)
             {
                 System.IO.File.WriteAllText("C:\\Log.txt", exception.Message);
             }
-
 
             return View("Index");
         }
@@ -152,7 +152,6 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
 
             var byteArray = Encoding.ASCII.GetBytes(data);
             var stream = new MemoryStream(byteArray);
-
             return File(stream, "text/plain", "TrustpilotCustomerUniqueLinks.txt");
         }
     }

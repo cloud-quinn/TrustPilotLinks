@@ -4,6 +4,7 @@
     background: azure;
     border: 1px dashed navy;
     padding: 0.5em 0.75em;
+    z-index: 2;
 }
 
 .about {
@@ -11,8 +12,13 @@
     margin: 0 0 0 0.25em;
 }
 
+
+
+
+
+
 body {
-    font-family: Segoe UI, sans-serif;
+    font-family: Verdana,Arial,sans-serif;
     padding: 2em 2em;
     background: #fffff0;
     color: #292929;
@@ -22,13 +28,16 @@ button {
     border: 1px solid #292929;
     border-radius: 4px 4px;
     padding: 0.5em 0.5em;
+    margin: 0.25em 0;
     background: #292929;
     color: #FEAC00;
 }
 
 #copy {
-    width: 5%;
+    width: 4%;
+    min-width: 35px;
     border-radius: 0 4px 4px 0 !important;
+    margin: 0 !important;
 }
 
 .container {
@@ -50,7 +59,7 @@ button {
 }
 
 input {
-    width: 65%;
+    width: 70%;
     padding: 0.5em 0.5em;
 }
 
@@ -64,10 +73,11 @@ input.item {
 }
 
 .label {
-    width: 35%;
+    width: 30%;
+    padding: 0 1em 0 0;
 }
 
 #uniqueLink {
-    width: 60% !important;
+    width: 66% !important;
     border-radius: 4px 0 0 4px !important;
 }
