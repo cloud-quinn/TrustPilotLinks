@@ -1,10 +1,15 @@
-﻿#aboutDomain, #aboutSecretKey {
+﻿#aboutDomain, #aboutSecretKey, #copyLink {
     position: absolute;
+    font-size: small;
+    padding: 0.5em 0.75em;        
+    border-radius: 3px 3px;
+    z-index: 2;
+}
+
+#aboutDomain, #aboutSecretKey {
     width: 20%;
     background: azure;
     border: 1px dashed navy;
-    padding: 0.5em 0.75em;
-    z-index: 2;
 }
 
 .about {
@@ -33,6 +38,12 @@ button {
     min-width: 35px;
     border-radius: 0 4px 4px 0 !important;
     margin: 0 !important;
+}
+
+#copyLink {
+    background: #fffff0;
+    color: #778899;
+    border: 1px solid #292929;
 }
 
 .container {

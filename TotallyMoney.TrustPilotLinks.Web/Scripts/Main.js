@@ -2,6 +2,7 @@
 $(document).ready(function () {
     $("#aboutDomain").hide();
     $("#aboutSecretKey").hide();
+    $("#copyLink").hide();
     var offset = $(".showAboutSecretKey").offset;
 
 
@@ -36,7 +37,7 @@ $(".showAboutDomain").click(function () {
 
 $(".showAboutSecretKey").click(function () {
     if ($("#aboutSecretKey").css("display") == "none") {
-        if (offset != $(this).offset()) {
+        if (offset !== $(this).offset()) {
             offset = $(this).offset();
             $("#aboutSecretKey").css({ "top": offset.top + 20, "left": offset.left + 20 });
         }
@@ -46,4 +47,18 @@ $(".showAboutSecretKey").click(function () {
         $("#aboutSecretKey").hide();
     }
 });
+
+$("#copy").hover(function () {
+    if ($("#copyLink").css("display") === "none") {
+        if (offset !== $(this).offset()) {
+            offset = $(this).offset();
+            $("#copyLink").css({ "top": offset.top + 20, "left": offset.left + 20 });
+        }
+        $("#copyLink").show();
+    }
+    else {
+        $("#copyLink").hide();
+    }
+});
+
 });
