@@ -4,7 +4,6 @@ using System.IO;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using TotallyMoney.TrustPilot.UniqueLink;
 using TotallyMoney.TrustPilotLinks.Web.Logic;
 using TotallyMoney.TrustPilotLinks.Web.Models;
 
@@ -12,10 +11,6 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private string _custEmail;
-        private string _custName;
-        private string _orderId;
-        private string _domain;
         private List<Result> _results = new List<Result>();
         private string _uniqueLink;
         public List<Result> GetHeaders()

@@ -12,18 +12,16 @@
     <div>
         @using (Html.BeginForm("GetLink", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-
-
             <input type="file" name="dataFile" id="dataFile" />
             <br />
             <div class="fileRequirements">
                 Please make sure you upload a .csv file that includes:
                 <ul>
-                    <li>each customer's full name,</li>
+                    <li>each customer's <strong>full name</strong>,</li>
                     <li>the <strong>domain name</strong><a href="#" class="about showAboutDomain">[?]</a> of the site they used,</li>
                     <li>the <strong>secret key</strong><a href="#" class="about showAboutSecretKey">[?]</a> for said domain,</li>
                     <li>each customer's <strong>e-mail address</strong>, and </li>
-                    <li>their most recent order ID.</li>
+                    <li>their most recent <strong>order ID</strong>.</li>
                 </ul>
             </div>
 
@@ -76,7 +74,7 @@
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.OrderRef)</p>
 
-                <button class="manualUtilities" id="getLink" type="submit" name="submitType" value="getCurrentLink">Get current link</button>
+                <button class="manualUtilities" id="getLink" name="submitType" value="getCurrentLink" type="submit">Get current link</button>
                 <button class="manualUtilities" id="addCustomer" name="submitType" value="addCustomer" type="submit">Add another customer</button>
                 <button class="manualUtilities" id="downloadFile" name="submitType" value="downloadFile" type="submit">Download data file</button>
             </div>

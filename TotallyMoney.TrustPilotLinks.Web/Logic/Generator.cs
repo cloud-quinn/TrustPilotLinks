@@ -4,15 +4,20 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace TotallyMoney.TrustPilot.UniqueLink
+namespace TotallyMoney.TrustPilotLinks.Web.Logic
 {
     public class Generator
     {
+        //we want to create a unique link in the format http://www.trustpilot.com/evaluate/[YOUR-DOMAIN-NAME]?a=[CUSTOMER-ORDER-ID]&b=[CUSTOMER-EMAIL-IN-BASE64]&c=[CUSTOMERS-NAME-ENCODED]&e=[HASH-OF-CUSTOMER-EMAIL-ORDER-ID-AND-SECRET-KEY]
+        //for example: http:// www.trustpilot.com/evaluate/embed/mysite.com?a=tyu9ytyui&b=bGdoQHRydXN0cGlsb3QuY29t&c=john&e=13d1ca785caccf7d6c0cb7cc4e33fa71e812b9d9
+        //for each customer to whom we want to send a link we need their full name, email address, order ID, domain name of site they used, and a secret key for that domain (provided by Trustpilot)
+        //collecting this data for all customers in one .csv file is best, so all links can be generated and downloaded at once
+
         public string GetBase64(string email, Encoding enc)
         {
             var byteEmail = enc.GetBytes(email);
             var base64Email = Convert.ToBase64String(byteEmail);
-            return base64Email; //TODO: get real key from Trustpilot and read emails and orderIDs from CRM / spreadsheet
+            return base64Email; 
         }
 
         public string GetUrlEncodedName(string name)
