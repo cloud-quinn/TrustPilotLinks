@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Web;
@@ -11,6 +12,7 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public DateTime DateTime = DateTime.Now;
         private List<Result> _results = new List<Result>();
         private string _uniqueLink;
         public List<Result> GetHeaders()
@@ -82,7 +84,8 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
             }
             catch (Exception exception)
             {
-                System.IO.File.WriteAllText("C:\\Log.txt", exception.Message);
+                var logFile = "D:/websites/TrustPilotLinks/Logs/" + DateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') + ".txt";
+                System.IO.File.WriteAllText(logFile, DateTime + ": " + exception.Message);
             }
             ViewBag.Error = "Please upload a valid .csv file of customer data";
             return View("Index");
@@ -94,6 +97,7 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
         {
             try
             {
+                
                 var e = Encoding.Default; //returns UTF encoding 
                 var g = new Generator();
                 var emailResult = g.GetBase64(input.CustEmail, e);
@@ -125,7 +129,8 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
             }
             catch (Exception exception)
             {
-                System.IO.File.WriteAllText("C:\\Log.txt", exception.Message);
+                var logFile = "D:/websites/TrustPilotLinks/Logs/" + DateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') + ".txt";
+                System.IO.File.WriteAllText(logFile, DateTime + ": " + exception.Message);
             }
 
             return View("Index");

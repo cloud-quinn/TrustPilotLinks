@@ -36,4 +36,4 @@ C:\Users\cquinn\Documents\Visual Studio 2013\Projects\TotallyMoney.TrustPilotLin
 C:\Users\cquinn\Documents\Visual Studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.WebPages.Razor.xml
 C:\Users\cquinn\Documents\Visual Studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.dll
 C:\Users\cquinn\Documents\Visual Studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.pdb
-C:\Users\cquinn\Documents\Visual Studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.csprojResolveAssemblyReference.cache
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.csprojResolveAssemblyReference.cache

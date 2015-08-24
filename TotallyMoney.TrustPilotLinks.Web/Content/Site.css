@@ -20,7 +20,7 @@
 body {
     font-family: Verdana,Arial,sans-serif;
     padding: 2em 2em;
-    background: #fffff0;
+    background: #fff;
     color: #292929;
 }
 
@@ -41,7 +41,7 @@ button {
 }
 
 #copyLink {
-    background: #fffff0;
+    background: #fff;
     color: #778899;
     border: 1px solid #292929;
 }
