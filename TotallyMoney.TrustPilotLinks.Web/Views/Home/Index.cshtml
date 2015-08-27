@@ -31,7 +31,7 @@
     </div>
 
     <h3>
-        Or <a href="#" id="manualInput">generate link(s) manually</a>
+        Or generate link(s) manually
     </h3>
     <div>
         <button class="manual" id="fillFields">Test form with dummy data</button>
@@ -67,7 +67,7 @@
 
                 <div class="container">
                     <span class="label">@Html.LabelFor(model => model.OrderRef)<a href="#" class="about showAboutOrderID">[?]</a></span>
-                    @Html.TextBoxFor(model => model.OrderRef, new { @type = "text", @class = "item", placeholder = "e.g. ORDER365 (or however you like to format your order references)" })
+                    @Html.TextBoxFor(model => model.OrderRef, new { @type = "text", @class = "item", placeholder = "e.g. ORDER365 (or however you like to format your references)" })
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.OrderRef)</p>
 

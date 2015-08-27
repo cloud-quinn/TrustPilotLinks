@@ -1,7 +1,7 @@
 ﻿casper.test.begin('TrustPilot form test', 18, function suite(test) {
 
     //casper.start("http://localhost:2513/Home/Index");
-    casper.start("http://192.168.1.243:1402");
+    casper.start("http://applications01:1402");
     casper.viewport(1280, 1024);
 
     casper.then(function () {

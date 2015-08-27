@@ -129,8 +129,13 @@ input {
     width: 90%;
 }
 
-#TM-link {
-    color: #fff !important;
+a:link, a:-webkit-any-link {
+    color: #292929 !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #dcdcdc !important;
     text-decoration: none !important;
 }
 
