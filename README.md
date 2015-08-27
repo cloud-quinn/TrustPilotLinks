@@ -1,7 +1,8 @@
 # TrustPilotLinks 
-                                                package release 1.0
-
-Trustpilot is a service that solicits, processes, and stores reviews of your business from your customers. By generating unique links made up of your customer's individual personal and transactional data, you can direct them to a suitable survey and use their responses in your marketing to improve conversion rates.
+                                                package release 1.0                                               
+                                                
+Trustpilot is a service that solicits, processes, and stores reviews of your business from your customers. By generating unique links made up of your customer's individual personal and transactional data, you can direct them to a suitable survey.
+In addition to gaining valuable feedback, you could use their responses in your marketing to improve conversion rates.
 
 To generate unique links, you will need a .csv file that looks like this:
 
@@ -11,7 +12,7 @@ Alternatively, you can enter all of this information into the form to generate u
 
 To start, run the solution locally and append /Home/Index to the address bar.
 
-                                           Originally written by Cloud Quinn
+                                           Originally written by Cloud Quinn                                                    
                                 Currently maintained by Cloud Quinn (cquinn@totallymoney.com)
 
                             Copyright 2015 TotallyMoney.com.  This software is distributed
