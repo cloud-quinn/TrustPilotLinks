@@ -9,4 +9,4 @@ Customer Name | Customer E-mail Address | Customer's most recent Order Reference
 
 Alternatively, you can enter all of this information into the form to generate unique links one at a time.
 
-Copyright 2015 TotallyMoney.com.
+TotallyMoney.com 2015.
