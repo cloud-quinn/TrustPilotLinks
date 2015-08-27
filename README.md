@@ -9,8 +9,6 @@ Customer Name | Customer E-mail Address | Customer's most recent Order Reference
 
 Alternatively, you can enter all of this information into the form to generate unique links one at a time.
 
-To start, run the solution locally and append /Home/Index to the address bar.
-
                                        Originally written by Cloud Quinn                      
                            Currently maintained by Cloud Quinn (cquinn@totallymoney.com)
                            
