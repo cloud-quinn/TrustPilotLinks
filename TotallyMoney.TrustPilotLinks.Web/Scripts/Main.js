@@ -2,6 +2,7 @@
 $(document).ready(function () {
     $("#aboutDomain").hide();
     $("#aboutSecretKey").hide();
+    $("#aboutOrderID").hide();
     $("#copyLink").hide();
     var offset = $(".showAboutSecretKey").offset;
 
@@ -24,7 +25,7 @@ $("#copy").click(function () {
 
 $(".showAboutDomain").click(function () {
     if ($("#aboutDomain").css("display") === "none") {
-        if (offset != $(this).offset()) {
+        if (offset !== $(this).offset()) {
             offset = $(this).offset();
             $("#aboutDomain").css({ "top": offset.top + 20, "left": offset.left + 20 });
         }
@@ -36,7 +37,7 @@ $(".showAboutDomain").click(function () {
 });
 
 $(".showAboutSecretKey").click(function () {
-    if ($("#aboutSecretKey").css("display") == "none") {
+    if ($("#aboutSecretKey").css("display") === "none") {
         if (offset !== $(this).offset()) {
             offset = $(this).offset();
             $("#aboutSecretKey").css({ "top": offset.top + 20, "left": offset.left + 20 });
@@ -45,6 +46,19 @@ $(".showAboutSecretKey").click(function () {
     }
     else {
         $("#aboutSecretKey").hide();
+    }
+});
+
+$(".showAboutOrderID").click(function () {
+    if ($("#aboutOrderID").css("display") === "none") {
+        if (offset !== $(this).offset()) {
+            offset = $(this).offset();
+            $("#aboutOrderID").css({ "top": offset.top + 20, "left": offset.left + 20 });
+        }
+        $("#aboutOrderID").show();
+    }
+    else {
+        $("#aboutOrderID").hide();
     }
 });
 

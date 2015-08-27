@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
-using TotallyMoney.TrustPilot.UniqueLink;
 using TotallyMoney.TrustPilotLinks.Web.Logic;
 
 namespace TrustPilot.Tests

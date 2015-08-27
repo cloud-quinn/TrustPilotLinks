@@ -1,13 +1,14 @@
 ﻿casper.test.begin('TrustPilot form test', 18, function suite(test) {
 
-    casper.start("http://localhost:2513/Home/Index");
+    //casper.start("http://localhost:2513/Home/Index");
+    casper.start("http://192.168.1.243:1402");
     casper.viewport(1280, 1024);
 
     casper.then(function () {
         // Does page load?
         test.assertHttpStatus(200, 'TrustPilot form loads');
         test.assertTextExists('Generate unique links', 'Heading appears - Generate unique links');
-        this.click('h3[id="ui-id-1"]')
+        this.click('h3[id="ui-id-1"]');
     });
 
     casper.then(function () {
@@ -65,23 +66,23 @@
         this.wait(1000, function () {
             //are fields filled in?
             this.test.assertEval(function () {
-                return document.getElementById('Domain').value == "totallymoney.com";
+                return document.getElementById('Domain').value === "totallymoney.com";
             }, 'Domain filled in');
 
             this.test.assertEval(function () {
-                return document.getElementById('Key').value == "mykey12";
+                return document.getElementById('Key').value === "mykey12";
             }, 'Secret key filled in');
 
             this.test.assertEval(function () {
-                return document.getElementById('CustName').value == "John Doe";
+                return document.getElementById('CustName').value === "John Doe";
             }, 'Customer name filled in');
 
             this.test.assertEval(function () {
-                return document.getElementById('CustEmail').value == "email@email.com";
+                return document.getElementById('CustEmail').value === "email@email.com";
             }, 'Customer e-mail filled in');
 
             this.test.assertEval(function () {
-                return document.getElementById('OrderRef').value == "1234";
+                return document.getElementById('OrderRef').value === "1234";
             }, 'Order ID filled in');
         });
     });
@@ -91,10 +92,10 @@
         this.click('button#getLink');
         this.wait(1000, function () {
             this.test.assertEval(function () {
-                return document.getElementById('uniqueLink').value != " ";
+                return document.getElementById('uniqueLink').value !== " ";
             }, 'A current link appears on click');
             this.test.assertEval(function () {
-                return document.getElementById('uniqueLink').value == "http://www.trustpilot.com/evaluate/totallymoney.com?a=1234&b=ZW1haWxAZW1haWwuY29t&c=John%20Doe&e=b232dc87ad2a699763720a29f5b3db2df6f80dfd";
+                return document.getElementById('uniqueLink').value === "http://www.trustpilot.com/evaluate/totallymoney.com?a=1234&b=ZW1haWxAZW1haWwuY29t&c=John%20Doe&e=b232dc87ad2a699763720a29f5b3db2df6f80dfd";
             }, 'Correct current link generated on click');
             this.capture('Images/current-link.png');
         });
@@ -105,7 +106,7 @@
         this.click('button#addCustomer');
         this.wait(1000, function () {
             this.test.assertEval(function () {
-                return document.getElementById('CustName').value == "";
+                return document.getElementById('CustName').value === "";
             }, 'Customer name cleared on click of "Add another customer"');
             this.capture('Images/add-another-customer.png');
         });

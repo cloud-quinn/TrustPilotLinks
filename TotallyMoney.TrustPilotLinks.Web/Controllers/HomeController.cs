@@ -17,7 +17,7 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
         private string _uniqueLink;
         public List<Result> GetHeaders()
         {
-            var header = new Result("Customer Name", "Customer E-mail", "Order Reference", "Domain", "Unique Link");
+            var header = new Result("Customer Name", "Customer E-mail", "Customer Reference", "Domain", "Unique Link");
             return new List<Result>() { header };
         }
 

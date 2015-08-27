@@ -1,12 +1,12 @@
-﻿#aboutDomain, #aboutSecretKey, #copyLink {
+﻿#aboutDomain, #aboutSecretKey, #aboutOrderID, #copyLink {
     position: absolute;
     font-size: small;
-    padding: 0.5em 0.75em;        
+    padding: 0.5em 0.75em;
     border-radius: 3px 3px;
     z-index: 2;
 }
 
-#aboutDomain, #aboutSecretKey {
+#aboutDomain, #aboutSecretKey, #aboutOrderID {
     width: 20%;
     background: azure;
     border: 1px dashed navy;
@@ -15,13 +15,17 @@
 .about {
     font-size: 0.9em;
     margin: 0 0 0 0.25em;
+    border: none !important;
+    text-decoration: none !important;
 }
 
 body {
-    font-family: Verdana,Arial,sans-serif;
-    padding: 2em 2em;
-    background: #fff;
-    color: #292929;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body, button, input, .ui-accordion-header, .ui-accordion-content {
+    font-family: Open Sans, Arial, HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Lucida Grande, sans-serif !important;
 }
 
 button {
@@ -29,15 +33,24 @@ button {
     border-radius: 4px 4px;
     padding: 0.5em 0.5em;
     margin: 0.25em 0;
-    background: #292929;
-    color: #FEAC00;
+    background: #2BA1CD;
+    color: #292929;
+}
+
+.content {
+    padding: 0 2em 2em 2em;
+    background: #fff;
+    color: #292929;
 }
 
 #copy {
-    width: 4%;
-    min-width: 35px;
+    width: 7%;
+    min-width: 27px;
     border-radius: 0 4px 4px 0 !important;
+    border: none !important;
     margin: 0 !important;
+    float: right;
+    padding: 0.5em 0 !important;
 }
 
 #copyLink {
@@ -49,7 +62,6 @@ button {
 .container {
     display: flex;
     flex-direction: row;
-    width: 99.99%;
     align-items: flex-start;
     align-content: center;
     margin: 1em 0;
@@ -64,15 +76,33 @@ button {
     font-size: 0.9em;
 }
 
-input {
+.footer {
+    padding: 1em 0;
+    font-size: 0.9em;
+}
+
+.header, .footer {
+    background: #2BA1CD;
+    width: 100%;
+    color: #fff;
+}
+
+.header {
+    height: 5px;
+}
+
+input, #link {
     width: 70%;
+}
+
+input {
     padding: 0.5em 0.5em;
 }
 
-input.item {
-    border: 1px solid #292929;
-    border-radius: 4px 4px 4px;
-}
+    input.item, #link {
+        border: 1px solid #292929;
+        border-radius: 4px 4px 4px;
+    }
 
 .item {
     margin: 0 auto;
@@ -83,7 +113,47 @@ input.item {
     padding: 0 1em 0 0;
 }
 
+.logo {
+    background: #fff;
+    padding: 1em 2em;
+}
+
+#logo {
+    width: 20%;
+    min-width: 300px;
+}
+
 #uniqueLink {
-    width: 66% !important;
-    border-radius: 4px 0 0 4px !important;
+    border: none !important;
+    padding: 0.5em 0 0.5em 0.5em !important;
+    width: 90%;
+}
+
+#TM-link {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+
+
+@media only screen and (max-width:770px) {
+    #aboutDomain, #aboutSecretKey, #aboutOrderID {
+        width: 25%;
+    }
+
+    body {
+        font-size: x-small;
+    }
+
+    button {
+        width: 32%;
+    }
+
+    #logo {
+        width: 70%;
+    }
+
+    #uniqueLink {
+        width: 70%;
+    }
 }

@@ -9,10 +9,10 @@
         <label for="dataFile">Please upload a .csv file of your customer data</label>
     </h3>
     <div>
-        @using (Html.BeginForm("GetLink", "Home", FormMethod.Post, new {enctype = "multipart/form-data"}))
+        @using (Html.BeginForm("GetLink", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <input type="file" name="dataFile" id="dataFile"/>
-            <br/>
+            <input type="file" name="dataFile" id="dataFile" />
+            <br />
             <div class="fileRequirements">
                 Please make sure you upload a .csv file that includes:
                 <ul>
@@ -20,7 +20,7 @@
                     <li>the <strong>domain name</strong><a href="#" class="about showAboutDomain">[?]</a> of the site they used,</li>
                     <li>the <strong>secret key</strong><a href="#" class="about showAboutSecretKey">[?]</a> for said domain,</li>
                     <li>each customer's <strong>e-mail address</strong>, and </li>
-                    <li>their most recent <strong>order ID</strong>.</li>
+                    <li>a <strong>unique reference</strong> to your customer<a href="#" class="about showAboutOrderID">[?]</a>.</li>
                 </ul>
             </div>
 
@@ -36,38 +36,38 @@
     <div>
         <button class="manual" id="fillFields">Test form with dummy data</button>
 
-        @using (Html.BeginForm("GetLinkManual", "Home", FormMethod.Post, new {name = "manualSubmit", id = "manualSubmit"}))
+        @using (Html.BeginForm("GetLinkManual", "Home", FormMethod.Post, new { name = "manualSubmit", id = "manualSubmit" }))
         {
 
             <div class="manual">
                 <div class="container">
                     <span class="label">@Html.LabelFor(model => model.Domain)<a href="#" class="about showAboutDomain">[?]</a></span>
-                    @Html.TextBoxFor(model => model.Domain, new {@type = "text", @class = "item", placeholder = "e.g. www.mysite.com"})
+                    @Html.TextBoxFor(model => model.Domain, new { @type = "text", @class = "item", placeholder = "e.g. www.mysite.com" })
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.Domain)</p>
 
                 <div class="container">
                     <span class="label">@Html.LabelFor(model => model.Key)<a href="#" class="about showAboutSecretKey">[?]</a></span>
-                    @Html.TextBoxFor(model => model.Key, new {@type = "text", @class = "item", placeholder = "e.g. mys3cr3tk3y (this value is provided by Trustpilot)"})
+                    @Html.TextBoxFor(model => model.Key, new { @type = "text", @class = "item", placeholder = "e.g. mys3cr3tk3y (this value is provided by Trustpilot)" })
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.Key)</p>
 
                 <div class="container">
-                    @Html.LabelFor(model => model.CustName, new {@class = "label"})
-                    @Html.TextBoxFor(model => model.CustName, new {@type = "text", @class = "item", placeholder = "e.g. John Doe"})
+                    @Html.LabelFor(model => model.CustName, new { @class = "label" })
+                    @Html.TextBoxFor(model => model.CustName, new { @type = "text", @class = "item", placeholder = "e.g. John Doe" })
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.CustName)</p>
 
 
                 <div class="container">
-                    @Html.LabelFor(model => model.CustEmail, new {@class = "label"})
-                    @Html.TextBoxFor(model => model.CustEmail, new {@type = "text", @class = "item", placeholder = "e.g. test@example.com"})
+                    @Html.LabelFor(model => model.CustEmail, new { @class = "label" })
+                    @Html.TextBoxFor(model => model.CustEmail, new { @type = "text", @class = "item", placeholder = "e.g. test@example.com" })
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.CustEmail)</p>
 
                 <div class="container">
-                    @Html.LabelFor(model => model.OrderRef, new {@class = "label"})
-                    @Html.TextBoxFor(model => model.OrderRef, new {@type = "text", @class = "item", placeholder = "e.g. ORDER365 (or however you like to format your order references)"})
+                    <span class="label">@Html.LabelFor(model => model.OrderRef)<a href="#" class="about showAboutOrderID">[?]</a></span>
+                    @Html.TextBoxFor(model => model.OrderRef, new { @type = "text", @class = "item", placeholder = "e.g. ORDER365 (or however you like to format your order references)" })
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.OrderRef)</p>
 
@@ -79,7 +79,7 @@
 
         <div class="container manual">
             <label for="uniqueLink" class="item label">This customer's <strong>unique link</strong> is: </label>
-            <input class="item" id="uniqueLink" name="uniqueLink" type="text" value="@ViewBag.UniqueLink"/><button id="copy"><i class="fa fa-clipboard"></i></button>
+            <span id="link"><input class="item" id="uniqueLink" name="uniqueLink" type="text" value="@ViewBag.UniqueLink" /><button id="copy"><i class="fa fa-clipboard"></i></button></span>
         </div>
 
 
@@ -89,3 +89,4 @@
 <small id="copyLink">Copy link</small>
 <small id="aboutDomain">Your domain name on Trustpilot, e.g. "mysite.com".</small>
 <small id="aboutSecretKey">Each domain has its own key which must be kept secret at all times. This key is provided by Trustpilot. To get started, ask your account manager for your secret key.</small>
+<small id="aboutOrderID">Your link must include a unique reference to the customer, such as a customer ID, order ID, or visit ID. Using an Order ID can help you identify which product(s) your customer bought, and when.</small>

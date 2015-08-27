@@ -12,8 +12,17 @@
     <script src="~/Scripts/TestForm.js"></script>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="header"></div>
+    <div class="logo">
+        <a href="https://www.totallymoney.com"><img src="https://s3-eu-west-1.amazonaws.com/tm-header/images/TotallyMoney_SVG.svg" alt="Totally Money" id="logo"></a>
+</div>
+<div class="content">
+    @RenderBody()
+</div>
+    <div class="footer">
+        <div class="container">
+            <div class="item"><a id="TM-link" href="https://www.totallymoney.com">TotallyMoney.com</a></div>
+        </div>
     </div>
 </body>
 </html>
