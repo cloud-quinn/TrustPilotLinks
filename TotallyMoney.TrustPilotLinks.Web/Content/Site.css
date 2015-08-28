@@ -131,7 +131,7 @@ input {
 
 a:link, a:-webkit-any-link {
     color: #292929 !important;
-    text-decoration: none !important;
+    /*text-decoration: none !important;*/
 }
 
 a:hover {
