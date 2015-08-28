@@ -51,7 +51,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-    <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath></Reference>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,7 +69,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Documents\Visual Studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web.csproj">
+    <ProjectReference Include="..\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web.csproj">
       <Project>{BD3B45A4-92A7-4249-9AB4-880B612DA588}</Project>
       <Name>TotallyMoney.TrustPilotLinks.Web</Name>
     </ProjectReference>

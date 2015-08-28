@@ -59,7 +59,7 @@ namespace TrustPilot.Tests
     {
         private readonly Generator _g = new Generator();
         private readonly Encoding _e = Encoding.Default;
-        private List<Input> data = new List<Input>();
+        private readonly List<Input> _data = new List<Input>();
         private string _name;
         private string _email;
         private string _orderId;
@@ -69,48 +69,67 @@ namespace TrustPilot.Tests
         private string _encodedName;
         private string _hashResult;
         private string _uniqueLink;
-        private string[] _domains = { "totallymoney.com", "luma.co.uk", "marbles.com", "fluid.co.uk", " " };
-        private string[] _keys = { "t19o15t19a1l12l12y23m13o15n14e5y23", "l12u20m13a1", "m13a1rb2l12e5s", "f6l12u20i9d4", " " };
-        private string[] _expectedLinks = { "http://www.trustpilot.com/evaluate/luma.co.uk?a=1922&b=am9obkBoaXNlbWFpbC5jb20=&c=John%20Doe&e=badbe6d8ee3f93936c25e6c76ec454b2cdcacc85", "http://www.trustpilot.com/evaluate/fluid.co.uk?a=1004&b=amFuZUBoZXJlbWFpbC5jb20=&c=Jane%20Doe&e=5af3c9fc5479cdac1d76151034d227ced69a5071", "http://www.trustpilot.com/evaluate/totallymoney.com?a=5333&b=dG90YWxseW1vbmV5QGVtYWlsLmNvbQ==&c=Total%20E%20Money&e=51f4fb299a485db4b7618833121eb78dd545cbf0", "http://www.trustpilot.com/evaluate/luma.co.uk?a=9436&b=bHVtYWNhcmRAZW1haWwuY29t&c=Luma%20Card&e=2870c68049846087a4021e38602ca966ff630961", "http://www.trustpilot.com/evaluate/marbles.com?a=2087&b=bWFyYmxlc0BlbWFpbC5jb20=&c=Miss%20Marbles&e=e1c0f8536e5baeb93ec6256ebf71e9ac33ee0970" };
-        private string[] _testLinks = new string[5];
+        private readonly string[] _domains = {"totallymoney.com", "luma.co.uk", "marbles.com", "fluid.co.uk", " "};
+
+        private readonly string[] _keys =
+        {
+            "t19o15t19a1l12l12y23m13o15n14e5y23", "l12u20m13a1", "m13a1rb2l12e5s",
+            "f6l12u20i9d4", " "
+        };
+
+        private readonly string[] _expectedLinks =
+        {
+            "http://www.trustpilot.com/evaluate/luma.co.uk?a=1922&b=am9obkBoaXNlbWFpbC5jb20=&c=John%20Doe&e=badbe6d8ee3f93936c25e6c76ec454b2cdcacc85",
+            "http://www.trustpilot.com/evaluate/fluid.co.uk?a=1004&b=amFuZUBoZXJlbWFpbC5jb20=&c=Jane%20Doe&e=5af3c9fc5479cdac1d76151034d227ced69a5071",
+            "http://www.trustpilot.com/evaluate/totallymoney.com?a=5333&b=dG90YWxseW1vbmV5QGVtYWlsLmNvbQ==&c=Total%20E%20Money&e=51f4fb299a485db4b7618833121eb78dd545cbf0",
+            "http://www.trustpilot.com/evaluate/luma.co.uk?a=9436&b=bHVtYWNhcmRAZW1haWwuY29t&c=Luma%20Card&e=2870c68049846087a4021e38602ca966ff630961",
+            "http://www.trustpilot.com/evaluate/marbles.com?a=2087&b=bWFyYmxlc0BlbWFpbC5jb20=&c=Miss%20Marbles&e=e1c0f8536e5baeb93ec6256ebf71e9ac33ee0970"
+        };
+
+        private readonly string[] _testLinks = new string[5];
 
         protected override void Given()
         {
             base.Given();
-            data.Add(new Input("John Doe", "john@hisemail.com", "1922", "luma.co.uk"));
-            data.Add(new Input("Jane Doe", "jane@heremail.com", "1004", "fluid.co.uk"));
-            data.Add(new Input("Total E Money", "totallymoney@email.com", "5333", "totallymoney.com"));
-            data.Add(new Input("Luma Card", "lumacard@email.com", "9436", "luma.co.uk"));
-            data.Add(new Input("Miss Marbles", "marbles@email.com", "2087", "marbles.com"));
+            _data.Add(new Input("John Doe", "john@hisemail.com", "1922", "luma.co.uk"));
+            _data.Add(new Input("Jane Doe", "jane@heremail.com", "1004", "fluid.co.uk"));
+            _data.Add(new Input("Total E Money", "totallymoney@email.com", "5333", "totallymoney.com"));
+            _data.Add(new Input("Luma Card", "lumacard@email.com", "9436", "luma.co.uk"));
+            _data.Add(new Input("Miss Marbles", "marbles@email.com", "2087", "marbles.com"));
         }
 
         protected override void When()
         {
             base.When();
-            int i = 0;
+            var i = 0;
             _key = _keys[i];
-            foreach (var d in data)
+
+            foreach (var d in _data)
             {
                 _name = d.CustName;
                 _email = d.CustEmail;
                 _orderId = d.OrderRef;
                 _domain = d.Domain;
-                for (var t = 0; t < _domains.Length; t++) {  
-                if (_domain == _domains[t])
+                for (var t = 0; t < _domains.Length; t++)
                 {
-                    _key = _keys[t];
+                    if (_domain == _domains[t])
+                    {
+                        _key = _keys[t];
+                    }
                 }
-}
                 _emailResult = _g.GetBase64(_email, _e);
                 _encodedName = _g.GetUrlEncodedName(_name);
                 _hashResult = _g.CalculateHash(_key, _email, _orderId);
                 _uniqueLink = _g.GetUniqueLink(_domain, _orderId, _emailResult, _encodedName, _hashResult);
-                if (i < _testLinks.Length) { 
+
+                if (i >= _testLinks.Length)
+                {
+                    continue;
+                }
+
                 _testLinks[i] = _uniqueLink;
                 i++;
-                }
             }
-
         }
 
         [Then]
@@ -126,7 +145,6 @@ namespace TrustPilot.Tests
             {
                 Assert.AreEqual(_expectedLinks[i], _testLinks[i]);
             }
-
         }
     }
 }

@@ -37,3 +37,42 @@ C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLin
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.pdb
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.csprojResolveAssemblyReference.cache
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\TotallyMoney.TrustPilotLinks.Web.dll.config
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\TotallyMoney.TrustPilotLinks.Web.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\TotallyMoney.TrustPilotLinks.Web.pdb
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Antlr3.Runtime.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Microsoft.Web.Infrastructure.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Moq.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Newtonsoft.Json.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\nunit.framework.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.Net4.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Helpers.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Mvc.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Optimization.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Razor.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.WebPages.Deployment.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.WebPages.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.WebPages.Razor.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\WebGrease.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Antlr3.Runtime.pdb
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Moq.pdb
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Moq.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Newtonsoft.Json.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\nunit.framework.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.pdb
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.pdb
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.Net4.pdb
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Helpers.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Mvc.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Optimization.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Razor.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.WebPages.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.WebPages.Deployment.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.WebPages.Razor.xml
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.csprojResolveAssemblyReference.cache
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.dll
+C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.pdb
