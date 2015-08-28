@@ -66,7 +66,7 @@ $("#copy").hover(function () {
     if ($("#copyLink").css("display") === "none") {
         if (offset !== $(this).offset()) {
             offset = $(this).offset();
-            $("#copyLink").css({ "top": offset.top + 20, "left": offset.left + 20 });
+            $("#copyLink").css({ "top": offset.top + 40, "left": offset.left + 5 });
         }
         $("#copyLink").show();
     }
