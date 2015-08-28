@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -12,19 +13,21 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public DateTime DateTime = DateTime.Now;
+        private DateTime _dateTime = DateTime.Now;
         private List<Result> _results = new List<Result>();
         private string _uniqueLink;
-        public List<Result> GetHeaders()
+
+        public IEnumerable<Result> GetHeaders()
         {
             var header = new Result("Customer Name", "Customer E-mail", "Customer Reference", "Domain", "Unique Link");
-            return new List<Result>() { header };
+            return new List<Result> {header};
         }
 
-        public List<Result> UpdateResults(string cName, string cEmail, string orderR, string domainUrl, string uLink)
+        public IEnumerable<Result> UpdateResults(string cName, string cEmail, string orderR, string domainUrl,
+            string uLink)
         {
             var r = new Result(cName, cEmail, orderR, domainUrl, uLink);
-            return new List<Result>() { r };
+            return new List<Result> {r};
         }
 
         //
@@ -40,56 +43,71 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
         {
             try
             {
-                string filename = dataFile.FileName;
-                string extension = Path.GetExtension(filename);
+                var filename = dataFile.FileName;
+                var extension = Path.GetExtension(filename);
 
-                if (dataFile != null && dataFile.ContentLength > 0 && extension == ".csv")
+                if (dataFile.ContentLength > 0 && extension == ".csv")
                 {
-
                     var inputs = new List<Input>();
                     var results = new List<Result>(GetHeaders());
                     var uploadedBytes = new byte[dataFile.ContentLength];
                     dataFile.InputStream.Read(uploadedBytes, 0, dataFile.ContentLength);
                     var decodedString = Encoding.Default.GetString(uploadedBytes);
-                    var linesInCsv = decodedString.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                    var linesInCsv = decodedString.Split(new[] {Environment.NewLine},
+                        StringSplitOptions.RemoveEmptyEntries);
 
-                    foreach (var line in linesInCsv)
+                    foreach (var components in linesInCsv.Select(line => line.Split(',')))
                     {
-                        var components = line.Split(',');
-                        char[] toTrim = { '\'', ' ' };
+                        char[] toTrim = {'\'', ' '};
                         var name = components[0].Trim(toTrim);
                         var email = components[1].Trim(toTrim);
                         var orderNo = components[2].Trim(toTrim);
                         var domain = components[3].Trim(toTrim);
                         var key = components[4].Trim(toTrim);
 
-                        inputs.Add(new Input(name, email, orderNo, domain, key) { CustName = name, CustEmail = email, OrderRef = orderNo, Domain = domain, Key = key });
+                        inputs.Add(new Input(name, email, orderNo, domain, key)
+                        {
+                            CustName = name,
+                            CustEmail = email,
+                            OrderRef = orderNo,
+                            Domain = domain,
+                            Key = key
+                        });
                     }
 
-                    foreach (Input input in inputs)
+                    foreach (var input in inputs)
                     {
-                        var g = new Generator();
                         var e = Encoding.Default;
                         var emailResult = Generator.GetBase64(input.CustEmail, e);
                         var encodedName = Generator.GetUrlEncodedName(input.CustName);
                         var hashResult = Generator.CalculateHash(input.Key, input.CustEmail, input.OrderRef);
-                        _uniqueLink = Generator.GetUniqueLink(input.Domain, input.OrderRef, emailResult, encodedName, hashResult);
+                        _uniqueLink = Generator.GetUniqueLink(input.Domain, input.OrderRef, emailResult, encodedName,
+                            hashResult);
 
-                        results.Add(new Result(input.CustName, input.CustEmail, input.OrderRef, input.Domain, _uniqueLink) { CustName = input.CustName, CustEmail = input.CustEmail, OrderRef = input.OrderRef, Domain = input.Domain, UniqueLink = _uniqueLink });
+                        results.Add(new Result(input.CustName, input.CustEmail, input.OrderRef, input.Domain,
+                            _uniqueLink)
+                        {
+                            CustName = input.CustName,
+                            CustEmail = input.CustEmail,
+                            OrderRef = input.OrderRef,
+                            Domain = input.Domain,
+                            UniqueLink = _uniqueLink
+                        });
                     }
 
                     return CreateFile(results);
-
                 }
             }
             catch (Exception exception)
             {
-                var logFile = "D:/websites/TrustPilotLinks/Logs/" + DateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') + ".txt";
-                System.IO.File.WriteAllText(logFile, DateTime + ": " + exception.Message);
+                var logFile = "D:/websites/TrustPilotLinks/Logs/" +
+                              _dateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') +
+                              ".txt";
+                System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);
             }
+
             ViewBag.Error = "Please upload a valid .csv file of customer data";
             return View("Index");
-
         }
 
         [HttpPost]
@@ -97,23 +115,21 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
         {
             try
             {
-                
                 var e = Encoding.Default; //returns UTF encoding 
-                var g = new Generator();
                 var emailResult = Generator.GetBase64(input.CustEmail, e);
                 var encodedName = Generator.GetUrlEncodedName(input.CustName);
                 var hashResult = Generator.CalculateHash(input.Key, input.CustEmail, input.OrderRef);
                 _uniqueLink = Generator.GetUniqueLink(input.Domain, input.OrderRef, emailResult, encodedName, hashResult);
 
-                var resultsList = (List<Result>)Session["ResultsList"];
-                if (resultsList == null) resultsList = new List<Result>(GetHeaders());
+                var resultsList = (List<Result>) Session["ResultsList"] ?? new List<Result>(GetHeaders());
 
-                resultsList.AddRange(UpdateResults(input.CustName, input.CustEmail, input.OrderRef, input.Domain, _uniqueLink));
+                resultsList.AddRange(UpdateResults(input.CustName, input.CustEmail, input.OrderRef, input.Domain,
+                    _uniqueLink));
                 Session["ResultsList"] = resultsList;
                 _results = resultsList;
 
                 if (submitType == "addCustomer")
-                {     
+                {
                     ModelState.Clear();
                 }
 
@@ -129,15 +145,16 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
             }
             catch (Exception exception)
             {
-                var logFile = "D:/websites/TrustPilotLinks/Logs/" + DateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') + ".txt";
-                System.IO.File.WriteAllText(logFile, DateTime + ": " + exception.Message);
+                var logFile = "D:/websites/TrustPilotLinks/Logs/" +
+                              _dateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') +
+                              ".txt";
+                System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);
             }
 
             return View("Index");
         }
 
-
-        public FileStreamResult CreateFile(List<Result> resultList)
+        public FileStreamResult CreateFile(IEnumerable<Result> resultList)
         {
             var data = "";
 

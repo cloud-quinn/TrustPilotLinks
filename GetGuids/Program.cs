@@ -12,7 +12,7 @@ namespace GetGuids
             if (input != null)
             {
                 _num = int.Parse(input);
-                for (int i = 0; i < _num; i++)
+                for (var i = 0; i < _num; i++)
                 {
                     var guid = Guid.NewGuid();
                     Console.WriteLine(guid);
