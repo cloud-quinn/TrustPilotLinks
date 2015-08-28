@@ -70,10 +70,10 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
                     {
                         var g = new Generator();
                         var e = Encoding.Default;
-                        var emailResult = g.GetBase64(input.CustEmail, e);
-                        var encodedName = g.GetUrlEncodedName(input.CustName);
-                        var hashResult = g.CalculateHash(input.Key, input.CustEmail, input.OrderRef);
-                        _uniqueLink = g.GetUniqueLink(input.Domain, input.OrderRef, emailResult, encodedName, hashResult);
+                        var emailResult = Generator.GetBase64(input.CustEmail, e);
+                        var encodedName = Generator.GetUrlEncodedName(input.CustName);
+                        var hashResult = Generator.CalculateHash(input.Key, input.CustEmail, input.OrderRef);
+                        _uniqueLink = Generator.GetUniqueLink(input.Domain, input.OrderRef, emailResult, encodedName, hashResult);
 
                         results.Add(new Result(input.CustName, input.CustEmail, input.OrderRef, input.Domain, _uniqueLink) { CustName = input.CustName, CustEmail = input.CustEmail, OrderRef = input.OrderRef, Domain = input.Domain, UniqueLink = _uniqueLink });
                     }
@@ -100,10 +100,10 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
                 
                 var e = Encoding.Default; //returns UTF encoding 
                 var g = new Generator();
-                var emailResult = g.GetBase64(input.CustEmail, e);
-                var encodedName = g.GetUrlEncodedName(input.CustName);
-                var hashResult = g.CalculateHash(input.Key, input.CustEmail, input.OrderRef);
-                _uniqueLink = g.GetUniqueLink(input.Domain, input.OrderRef, emailResult, encodedName, hashResult);
+                var emailResult = Generator.GetBase64(input.CustEmail, e);
+                var encodedName = Generator.GetUrlEncodedName(input.CustName);
+                var hashResult = Generator.CalculateHash(input.Key, input.CustEmail, input.OrderRef);
+                _uniqueLink = Generator.GetUniqueLink(input.Domain, input.OrderRef, emailResult, encodedName, hashResult);
 
                 var resultsList = (List<Result>)Session["ResultsList"];
                 if (resultsList == null) resultsList = new List<Result>(GetHeaders());

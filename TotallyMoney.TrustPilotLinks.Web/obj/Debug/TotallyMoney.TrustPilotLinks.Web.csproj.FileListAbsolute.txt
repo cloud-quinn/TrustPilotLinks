@@ -44,8 +44,6 @@ C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Antlr3.Runtime.d
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Microsoft.Web.Infrastructure.dll
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Moq.dll
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Newtonsoft.Json.dll
-C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\nunit.framework.dll
-C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.dll
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.dll
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.Net4.dll
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Helpers.dll
@@ -60,11 +58,8 @@ C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Antlr3.Runtime.p
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Moq.pdb
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Moq.xml
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\Newtonsoft.Json.xml
-C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\nunit.framework.xml
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.pdb
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.xml
-C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.pdb
-C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.xml
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.Net4.pdb
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Helpers.xml
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Mvc.xml

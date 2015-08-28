@@ -35,10 +35,10 @@ namespace TrustPilot.Tests
         protected override void When()
         {
             base.When();
-            _emailResult = _g.GetBase64(_email, _e);
-            _encodedName = _g.GetUrlEncodedName(_name);
-            _hashResult = _g.CalculateHash(_key, _email, _orderId);
-            _uniqueLink = _g.GetUniqueLink(_domain, _orderId, _emailResult, _encodedName, _hashResult);
+            _emailResult = Generator.GetBase64(_email, _e);
+            _encodedName = Generator.GetUrlEncodedName(_name);
+            _hashResult = Generator.CalculateHash(_key, _email, _orderId);
+            _uniqueLink = Generator.GetUniqueLink(_domain, _orderId, _emailResult, _encodedName, _hashResult);
         }
 
         [Then]
@@ -117,10 +117,10 @@ namespace TrustPilot.Tests
                         _key = _keys[t];
                     }
                 }
-                _emailResult = _g.GetBase64(_email, _e);
-                _encodedName = _g.GetUrlEncodedName(_name);
-                _hashResult = _g.CalculateHash(_key, _email, _orderId);
-                _uniqueLink = _g.GetUniqueLink(_domain, _orderId, _emailResult, _encodedName, _hashResult);
+                _emailResult = Generator.GetBase64(_email, _e);
+                _encodedName = Generator.GetUrlEncodedName(_name);
+                _hashResult = Generator.CalculateHash(_key, _email, _orderId);
+                _uniqueLink = Generator.GetUniqueLink(_domain, _orderId, _emailResult, _encodedName, _hashResult);
 
                 if (i >= _testLinks.Length)
                 {
