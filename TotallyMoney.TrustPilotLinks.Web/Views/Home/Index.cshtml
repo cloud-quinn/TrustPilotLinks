@@ -19,11 +19,11 @@
             <div class="fileRequirements">
                 Please make sure you upload a .csv file that includes:
                 <ul>
-                    <li>each customer's <strong>full name</strong>,</li>
-                    <li>the <strong>domain name</strong><a href="#" class="about showAboutDomain">[?]</a> of the site they used,</li>
-                    <li>the <strong>secret key</strong><a href="#" class="about showAboutSecretKey">[?]</a> for said domain,</li>
-                    <li>each customer's <strong>e-mail address</strong>, and </li>
-                    <li>a <strong>unique reference</strong> to your customer<a href="#" class="about showAboutOrderID">[?]</a>.</li>
+                    <li>each customer's <strong>full name</strong>,</li>                  
+                    <li>each customer's <strong>e-mail address</strong>, </li>
+                    <li>a <strong>unique reference</strong> to each customer<a href="#" class="about showAboutOrderID">[?]</a>,</li>
+                    <li>the <strong>domain name</strong><a href="#" class="about showAboutDomain">[?]</a> of the site they used, and </li>
+                    <li>the <strong>secret key</strong><a href="#" class="about showAboutSecretKey">[?]</a> for said domain.</li>
                 </ul>
             </div>
 
@@ -42,36 +42,37 @@
         {
 
             <div class="manual">
+                
                 <div class="container">
-                    <span class="label">@Html.LabelFor(model => model.Domain)<a href="#" class="about showAboutDomain">[?]</a></span>
-                    @Html.TextBoxFor(model => model.Domain, new { @type = "text", @class = "item", placeholder = "e.g. www.mysite.com" })
-                </div>
-                <p class="error">@Html.ValidationMessageFor(model => model.Domain)</p>
-
-                <div class="container">
-                    <span class="label">@Html.LabelFor(model => model.Key)<a href="#" class="about showAboutSecretKey">[?]</a></span>
-                    @Html.TextBoxFor(model => model.Key, new { @type = "text", @class = "item", placeholder = "e.g. mys3cr3tk3y (this value is provided by Trustpilot)" })
-                </div>
-                <p class="error">@Html.ValidationMessageFor(model => model.Key)</p>
-
-                <div class="container">
-                    @Html.LabelFor(model => model.CustName, new { @class = "label" })
-                    @Html.TextBoxFor(model => model.CustName, new { @type = "text", @class = "item", placeholder = "e.g. John Doe" })
+                    @Html.LabelFor(model => model.CustName, new {@class = "label"})
+                    @Html.TextBoxFor(model => model.CustName, new {@type = "text", @class = "item", placeholder = "e.g. John Doe"})
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.CustName)</p>
 
 
                 <div class="container">
-                    @Html.LabelFor(model => model.CustEmail, new { @class = "label" })
-                    @Html.TextBoxFor(model => model.CustEmail, new { @type = "text", @class = "item", placeholder = "e.g. test@example.com" })
+                    @Html.LabelFor(model => model.CustEmail, new {@class = "label"})
+                    @Html.TextBoxFor(model => model.CustEmail, new {@type = "text", @class = "item", placeholder = "e.g. test@example.com"})
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.CustEmail)</p>
 
                 <div class="container">
                     <span class="label">@Html.LabelFor(model => model.OrderRef)<a href="#" class="about showAboutOrderID">[?]</a></span>
-                    @Html.TextBoxFor(model => model.OrderRef, new { @type = "text", @class = "item", placeholder = "e.g. ORDER365 (or however you like to format your references)" })
+                    @Html.TextBoxFor(model => model.OrderRef, new {@type = "text", @class = "item", placeholder = "e.g. ORDER365 (or however you like to format your references)"})
                 </div>
                 <p class="error">@Html.ValidationMessageFor(model => model.OrderRef)</p>
+
+                <div class="container">
+                    <span class="label">@Html.LabelFor(model => model.Domain)<a href="#" class="about showAboutDomain">[?]</a></span>
+                    @Html.TextBoxFor(model => model.Domain, new {@type = "text", @class = "item", placeholder = "e.g. www.mysite.com"})
+                </div>
+                <p class="error">@Html.ValidationMessageFor(model => model.Domain)</p>
+
+                <div class="container">
+                    <span class="label">@Html.LabelFor(model => model.Key)<a href="#" class="about showAboutSecretKey">[?]</a></span>
+                    @Html.TextBoxFor(model => model.Key, new {@type = "text", @class = "item", placeholder = "e.g. mys3cr3tk3y (this value is provided by Trustpilot)"})
+                </div>
+                <p class="error">@Html.ValidationMessageFor(model => model.Key)</p>
 
                 <button class="manualUtilities" id="getLink" name="submitType" value="getCurrentLink" type="submit">Get current link</button>
                 <button class="manualUtilities" id="addCustomer" name="submitType" value="addCustomer" type="submit">Add another customer</button>
