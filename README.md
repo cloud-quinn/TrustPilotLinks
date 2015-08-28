@@ -4,7 +4,7 @@
 
 In addition to gaining valuable feedback, you could use their responses in your marketing to improve conversion rates.
 
-<strong><a href="http://www.totallymoney.com">TotallyMoney.com</a>'s Trustpilot Unique Link Generator</strong> takes your customers' details and generates the links for you. Then, all you need to do is e-mail the links to your customers and wait for their feedback.
+<strong><a href="https://www.totallymoney.com">TotallyMoney.com</a>'s Trustpilot Unique Link Generator</strong> takes your customers' details and generates the links for you. Then, all you need to do is e-mail the links to your customers and wait for their feedback.
 
 To generate unique links using this application, you will need a .csv file that looks like this:
 
@@ -35,4 +35,4 @@ Alternatively, you can enter all of this information into the form to generate u
 
 This application, and its code, is free for you to use and adapt, with no restrictions, when creating your own unique links.
 
-Created by <a href="http://www.totallymoney.com">TotallyMoney.com</a>, 2015.
+Created by <a href="https://www.totallymoney.com">TotallyMoney.com</a>, 2015.
