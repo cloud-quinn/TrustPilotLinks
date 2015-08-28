@@ -6,8 +6,8 @@
 
     casper.then(function () {
         // Does page load?
-        test.assertHttpStatus(200, 'TrustPilot form loads');
-        test.assertTextExists('Generate unique links', 'Heading appears - Generate unique links');
+        test.assertHttpStatus(200, 'Trustpilot form loads');
+        test.assertTextExists('Trustpilot Unique Link Generator', 'Heading appears - Trustpilot Unique Link Generator');
         this.click('h3[id="ui-id-1"]');
     });
 
