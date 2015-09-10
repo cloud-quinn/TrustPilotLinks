@@ -8,8 +8,9 @@
 
 #aboutDomain, #aboutSecretKey, #aboutOrderID {
     max-width: 20%;
-    background: azure;
-    border: 1px dashed navy;
+    background: #e6e6e6 ;
+    opacity: 0.95;
+    border: 1px dashed #a9a9a9;
 }
 
 .about {
