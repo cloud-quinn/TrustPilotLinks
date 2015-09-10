@@ -1,4 +1,3 @@
-C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\TotallyMoney.TrustPilotLinks.Web.dll.config
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\TotallyMoney.TrustPilotLinks.Web.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\TotallyMoney.TrustPilotLinks.Web.pdb
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\Antlr3.Runtime.dll
