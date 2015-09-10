@@ -5,8 +5,6 @@ C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLin
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\Moq.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\Newtonsoft.Json.dll
-C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\nunit.framework.dll
-C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.Net4.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Helpers.dll
@@ -21,11 +19,8 @@ C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLin
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\Moq.pdb
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\Moq.xml
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\Newtonsoft.Json.xml
-C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\nunit.framework.xml
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.pdb
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.xml
-C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.pdb
-C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.AutoMocking.Moq.xml
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\StructureMap.Net4.pdb
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Helpers.xml
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Mvc.xml
@@ -71,3 +66,19 @@ C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.WebPa
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.csprojResolveAssemblyReference.cache
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.dll
 C:\sandbox\TrustPilotLinks\TotallyMoney.TrustPilotLinks.Web\obj\Debug\TotallyMoney.TrustPilotLinks.Web.pdb
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\Microsoft.CSharp.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.ComponentModel.DataAnnotations.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Configuration.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Data.DataSetExtensions.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Data.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Drawing.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.EnterpriseServices.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.ApplicationServices.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.DynamicData.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Entity.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Extensions.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Services.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Xml.dll
+C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Xml.Linq.dll

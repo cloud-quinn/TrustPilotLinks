@@ -76,6 +76,10 @@ button {
     font-size: 0.9em;
 }
 
+.footerLink {
+    font-size: 0.85em;
+}
+
 .footer {
     padding: 1em 0;
     font-size: 0.9em;
@@ -159,5 +163,9 @@ a:hover {
 
     #uniqueLink {
         width: 70%;
+    }
+
+    .footerLink {
+        padding: 0 3em;
     }
 }

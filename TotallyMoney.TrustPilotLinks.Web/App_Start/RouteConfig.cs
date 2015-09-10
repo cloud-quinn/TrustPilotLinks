@@ -9,9 +9,9 @@ namespace TotallyMoney.TrustPilotLinks.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("Home", "Home/{action}/{id}",
+/*            routes.MapRoute("Home", "Home/{action}/{id}",
                 new {controller = "Home", action = "Index", id = UrlParameter.Optional}
-                );
+                );*/
 
             routes.MapRoute("Default", "{controller}/{action}/{id}",
                 new {controller = "Home", action = "Index", id = UrlParameter.Optional}

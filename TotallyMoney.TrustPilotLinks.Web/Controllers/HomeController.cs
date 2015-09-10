@@ -10,6 +10,7 @@ using TotallyMoney.TrustPilotLinks.Web.Logic;
 using TotallyMoney.TrustPilotLinks.Web.Models;
 
 namespace TotallyMoney.TrustPilotLinks.Web.Controllers
+
 {
     public class HomeController : Controller
     {
