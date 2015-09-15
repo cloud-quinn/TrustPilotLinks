@@ -7,8 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotallyMoney.TrustPilotLink
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustPilot.Tests", "TrustPilot.Tests\TrustPilot.Tests.csproj", "{CF05CBAF-38BD-409E-8629-C15BA8BC788E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetGuids", "GetGuids\GetGuids.csproj", "{4663F4C1-7BFF-42EC-9088-0B29F97C0687}"
-EndProject
+//Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetGuids", "GetGuids\GetGuids.csproj", "{4663F4C1-7BFF-42EC-9088-0B29F97C0687}"
+//EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
