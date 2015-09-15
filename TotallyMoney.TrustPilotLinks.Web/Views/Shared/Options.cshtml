@@ -1,0 +1,21 @@
+﻿@model TotallyMoney.TrustPilotLinks.Web.Models.OptionsViewModel
+
+<p>Your downloaded file will include your customer e-mail addresses and their unique links. Please tick any other fields you would like to include:</p>
+<div class="includeOptions">
+    @Html.CheckBoxFor(model => model.ShowCustName, new {@class = "include"})
+    @Html.LabelFor(model => model.ShowCustName)
+</div>
+<div class="includeOptions">
+    @Html.CheckBoxFor(model => model.ShowCustId, new {@class = "include"})
+    @Html.LabelFor(model => model.ShowCustId)
+</div>
+<div class="includeOptions">
+    @Html.CheckBoxFor(model => model.ShowDomain, new { @class = "include" })
+    @Html.LabelFor(model => model.ShowDomain)
+</div>
+<div class="includeOptions">
+    @Html.CheckBoxFor(model => model.ShowSubscriber, new { @class = "include" })
+    @Html.LabelFor(model => model.ShowSubscriber) <span style="font-size: 0.75em"> only needed if you are uploading the data into <a href="http://www.exacttarget.com/uk">Exact Target</a></span> 
+</div>
+
+<br/>

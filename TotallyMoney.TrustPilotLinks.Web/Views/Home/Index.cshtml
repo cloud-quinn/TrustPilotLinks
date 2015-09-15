@@ -29,6 +29,7 @@
             </div>
 
             <p class="error">@ViewBag.Error</p>
+            @Html.Partial("~/Views/Shared/Options.cshtml");
             <button id="downloadFile" name="submitType" value="downloadFile" type="submit">Download data file</button>
         }
     </div>
@@ -43,7 +44,7 @@
         {
 
             <div class="manual">
-                
+
                 <div class="container">
                     @Html.LabelFor(model => model.CustName, new {@class = "label"})
                     @Html.TextBoxFor(model => model.CustName, new {@type = "text", @class = "item", placeholder = "e.g. John Doe"})
@@ -79,6 +80,7 @@
                 <button class="manualUtilities" id="addCustomer" name="submitType" value="addCustomer" type="submit">Add another customer</button>
                 <button class="manualUtilities" id="downloadFile" name="submitType" value="downloadFile" type="submit">Download data file</button>
             </div>
+            @Html.Partial("~/Views/Shared/Options.cshtml");
         }
 
         <div class="container manual">

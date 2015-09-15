@@ -81,3 +81,4 @@ C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLin
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Web.Services.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Xml.dll
 C:\Users\cquinn\documents\visual studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\System.Xml.Linq.dll
+C:\Users\cquinn\Documents\Visual Studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TotallyMoney.TrustPilotLinks.Web\bin\TotallyMoney.TrustPilotLinks.Web.dll.config

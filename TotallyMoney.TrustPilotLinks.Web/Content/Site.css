@@ -96,7 +96,16 @@ button {
     height: 5px;
 }
 
-input, #link {
+.includeOptions {
+    /*width: 20%;*/
+    display: block;
+}
+
+input.include {
+    max-width: 5% !important;
+}
+
+input.item, #link {
     width: 70%;
 }
 

@@ -183,6 +183,7 @@
     <Compile Include="Logic\Input.cs" />
     <Compile Include="Logic\Result.cs" />
     <Compile Include="Models\InputViewModel.cs" />
+    <Compile Include="Models\OptionsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +192,7 @@
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Shared\Options.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

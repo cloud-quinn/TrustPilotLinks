@@ -20,14 +20,14 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
 
         public IEnumerable<Result> GetHeaders()
         {
-            var header = new Result("Customer Name", "Customer E-mail", "Customer Reference", "Domain", "Unique Link");
+            var header = new Result("CustomerName", "CustomerEmail", "CustomerReference", "Domain", "UniqueLink", "Subscriber");
             return new List<Result> {header};
         }
 
         public IEnumerable<Result> UpdateResults(string cName, string cEmail, string orderR, string domainUrl,
-            string uLink)
+            string uLink, string subscriber)
         {
-            var r = new Result(cName, cEmail, orderR, domainUrl, uLink);
+            var r = new Result(cName, cEmail, orderR, domainUrl, uLink, subscriber);
             return new List<Result> {r};
         }
 
@@ -40,7 +40,7 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetLink(HttpPostedFileBase dataFile)
+        public ActionResult GetLink(HttpPostedFileBase dataFile, OptionsViewModel options)
         {
             try
             {
@@ -86,7 +86,7 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
                             hashResult);
 
                         results.Add(new Result(input.CustName, input.CustEmail, input.OrderRef, input.Domain,
-                            _uniqueLink)
+                            _uniqueLink, input.CustEmail)
                         {
                             CustName = input.CustName,
                             CustEmail = input.CustEmail,
@@ -96,12 +96,12 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
                         });
                     }
 
-                    return CreateFile(results);
+                    return CreateFile(results, options);
                 }
             }
             catch (Exception exception)
             {
-                var logFile = "D:/websites/TrustPilotLinks/Logs/" +
+                var logFile = 
                               _dateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') +
                               ".txt";
                 System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);
@@ -112,7 +112,7 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetLinkManual(string submitType, InputViewModel input)
+        public ActionResult GetLinkManual(string submitType, InputViewModel input, OptionsViewModel options)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
                 var resultsList = (List<Result>) Session["ResultsList"] ?? new List<Result>(GetHeaders());
 
                 resultsList.AddRange(UpdateResults(input.CustName, input.CustEmail, input.OrderRef, input.Domain,
-                    _uniqueLink));
+                    _uniqueLink, input.CustEmail));
                 Session["ResultsList"] = resultsList;
                 _results = resultsList;
 
@@ -141,12 +141,12 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
 
                 if (submitType == "downloadFile")
                 {
-                    return CreateFile(_results);
+                    return CreateFile(_results, options);
                 }
             }
             catch (Exception exception)
             {
-                var logFile = "D:/websites/TrustPilotLinks/Logs/" +
+                var logFile = 
                               _dateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') +
                               ".txt";
                 System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);
@@ -155,17 +155,40 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
             return View("Index");
         }
 
-        public FileStreamResult CreateFile(IEnumerable<Result> resultList)
+        public FileStreamResult CreateFile(IEnumerable<Result> resultList, OptionsViewModel options)
         {
             var data = "";
+            var name = "";
+            var order = "";
+            var subscriber = "";
+            var domain = "";
 
             foreach (var r in resultList)
             {
-                var name = r.CustName.Trim();
                 var email = r.CustEmail.Trim();
-                var order = r.OrderRef.Trim();
                 var link = r.UniqueLink.Trim();
-                data += "'" + name + "', " + "'" + email + "', " + "'" + order + "', " + "'" + link + "'" + "\r\n";
+
+                if (options != null)
+                {
+                    if (options.ShowCustName == true)
+                    {
+                        name = r.CustName.Trim() + ",";
+                    }
+                    if (options.ShowCustId == true)
+                    {
+                        order = r.OrderRef.Trim() + ",";
+                    }
+                    if (options.ShowDomain == true)
+                    {
+                        domain = r.Domain.Trim() + ",";
+                    }
+                    if (options.ShowSubscriber == true)
+                    {
+                        subscriber = r.Subscriber.Trim() + ",";
+                    }
+                }
+                //data += "'" + name + "', " + "'" + email + "', " + "'" + order + "', " + "'" + link + "'" + "\r\n";
+                data +=  name + order + domain + subscriber + email + "," + link + "," +  "\r\n";
             }
 
             var byteArray = Encoding.ASCII.GetBytes(data);
