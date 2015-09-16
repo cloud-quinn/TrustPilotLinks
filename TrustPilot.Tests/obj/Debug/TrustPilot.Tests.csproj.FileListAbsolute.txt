@@ -1,1 +1,0 @@
-C:\Users\cquinn\Documents\Visual Studio 2013\Projects\TotallyMoney.TrustPilotLinks.Web\TrustPilot.Tests\obj\Debug\TrustPilot.Tests.csprojResolveAssemblyReference.cache
