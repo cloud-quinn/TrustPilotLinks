@@ -1,6 +1,5 @@
 packages
 bin
-obj
 *.user
 *.suo
 *.temp
