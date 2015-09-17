@@ -33,7 +33,7 @@ To generate unique links using this application, you will need a .csv file that 
 
 Alternatively, you can enter all of this information into the form to generate unique links one at a time.
 
-This application, and its code, is free for you to use and adapt, with no restrictions, when creating your own unique links (see further licensing details below). If you would like to ask questions, make suggestions, or tell us about improvements you have made to the code, please get in touch at <a href="mailto: feedback@totallymoney.com">feedback@totallymoney.com</a>. 
+This application, and its code, is free for you to use and adapt, with no restrictions, when creating your own unique links (see further licensing details below). If you would like to develop the code, we recommend you clone this repository and use Visual Studio 2013. If you would like to ask questions, make suggestions, or tell us about improvements you have made to the code, please get in touch at <a href="mailto: feedback@totallymoney.com">feedback@totallymoney.com</a>. 
 
 Created and maintained by <a href="https://www.totallymoney.com">TotallyMoney.com</a>, 2015.
 
