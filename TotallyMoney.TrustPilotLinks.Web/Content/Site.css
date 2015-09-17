@@ -134,13 +134,21 @@ input {
 
 #logo {
     width: 20%;
-    min-width: 300px;
+    min-width: 275px;
+}
+
+.options {
+    list-style: none;
 }
 
 #uniqueLink {
     border: none !important;
     padding: 0.5em 0 0.5em 0.5em !important;
     width: 90%;
+}
+
+ul {
+    list-style: square;
 }
 
 a:link, a:-webkit-any-link {
@@ -167,15 +175,21 @@ a:hover {
         width: 32%;
     }
 
-    #logo {
-        width: 70%;
-    }
-
-    #uniqueLink {
-        width: 70%;
+    #fillFields {
+        width: 100% !important;
     }
 
     .footerLink {
         padding: 0 3em;
+        line-height: 1.75em;
+        text-align: center;
+    }    
+
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    #uniqueLink {
+        width: 70%;
     }
 }

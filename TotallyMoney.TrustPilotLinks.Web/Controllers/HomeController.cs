@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -101,13 +100,13 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
             }
             catch (Exception exception)
             {
-                var logFile = 
+/*                var logFile = 
                               _dateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') +
                               ".txt";
-                System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);
+                System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);*/
+            
+                ViewBag.Error = "Please upload a valid .csv file of customer data";
             }
-
-            ViewBag.Error = "Please upload a valid .csv file of customer data";
             return View("Index");
         }
 
@@ -146,10 +145,11 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
             }
             catch (Exception exception)
             {
-                var logFile = 
+/*                var logFile = 
                               _dateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') +
                               ".txt";
-                System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);
+                System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);*/
+                ViewBag.Error = exception.Message + ". Please try again.";
             }
 
             return View("Index");
