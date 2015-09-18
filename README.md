@@ -12,9 +12,9 @@ To generate unique links using this application, you will need a .csv file that 
     <tr>
         <td>Customer Name</td>
         <td>Customer E-mail</td>
-        <td>Unique Customer ID<sup>1</sup></td>
-        <td>Domain Name<sup>2</sup></td>
-        <td>Secret Key<sup>3</sup></td>
+        <td>Unique Customer ID<sup> 1</sup></td>
+        <td>Domain Name<sup> 2</sup></td>
+        <td>Secret Key<sup> 3</sup></td>
     </tr>
     <tr>
         <td>"John Doe"</td>
