@@ -139,7 +139,7 @@ input {
 
 #logo {
     width: 20%;
-    min-width: 275px;
+    min-width: 240px;
 }
 
 .options {
@@ -193,11 +193,10 @@ a:hover {
     .footerLink {
         padding: 0 3em;
         line-height: 1.75em;
-        text-align: center;
     }    
 
     h1 {
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
     
     #uniqueLink {
