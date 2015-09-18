@@ -102,7 +102,6 @@ button {
 }
 
 .includeOptions {
-    /*width: 20%;*/
     display: block;
 }
 
@@ -139,7 +138,7 @@ input {
 
 #logo {
     width: 20%;
-    min-width: 240px;
+    min-width: 230px;
 }
 
 .options {
