@@ -23,6 +23,7 @@
 body {
     padding: 0 !important;
     margin: 0 !important;
+    line-height: 1.6em;
 }
 
 body, button, input, .ui-accordion-header, .ui-accordion-content {
@@ -42,6 +43,8 @@ button {
     padding: 0 2em 2em 2em;
     background: #fff;
     color: #292929;
+    width: 75%;
+    margin: 0 auto;
 }
 
 #copy {
@@ -79,6 +82,8 @@ button {
 
 .footerLink {
     font-size: 0.85em;
+    margin: 0 auto;
+    width: 75%;
 }
 
 .footer {
@@ -129,7 +134,7 @@ input {
 
 .logo {
     background: #fff;
-    padding: 1em 2em;
+    padding: 1em 0;
 }
 
 #logo {
@@ -151,13 +156,19 @@ ul {
     list-style: square;
 }
 
-a:link, a:-webkit-any-link {
+a:link {
+    color: #292929 !important;
+}
+
+a:-webkit-any-link {
     color: #292929 !important;
 }
 
 a:hover {
     color: #dcdcdc !important;
 }
+
+
 
 
 
