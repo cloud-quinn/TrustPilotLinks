@@ -104,9 +104,8 @@ namespace TotallyMoney.TrustPilotLinks.Web.Controllers
                               _dateTime.ToString(CultureInfo.InvariantCulture).Replace('/', '_').Replace(':', '_') +
                               ".txt";
                 System.IO.File.WriteAllText(logFile, _dateTime + ": " + exception.Message);*/
-            
-                ViewBag.Error = "Please upload a valid .csv file of customer data";
-            }
+            }                
+            ViewBag.Error = "Please upload a valid .csv file of customer data";
             return View("Index");
         }
 
